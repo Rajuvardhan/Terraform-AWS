@@ -1,44 +1,44 @@
 variable "aws_region" {
-    default = "ap-south-1"  
+    description = "region for aws resources"  
 }
 
 variable "vpc_cidr" {
-    default = "10.105.0.0/24"
+    description = "cidr range for vpc"
      
 }
 
 variable "public_subnet_cidr" {
-    default = "10.105.0.0/26"   
+    description = "public subnet 1"   
   
 }
 
 variable "public_subnet1_cidr" {
-    default = "10.105.0.192/26"   
+    description = "public subnet 2"   
   
 }
 
 variable "private_subnet1_cidr" {
-    default = "10.105.0.64/26" 
+    description = "private subnet 1" 
   
 }
 
 variable "private_subnet2_cidr" {
-    default = "10.105.0.128/26"
+    description = "private subnet 2"
   
 }
 
 variable "availability_zone" {
-    default = "ap-south-1a"
+    description = "avaialbility zone 1"
 
 }
   
 variable "availability_zone-1b" {
-    default = "ap-south-1b"
+    description = "avaialbility zone 2"
 }
 
 variable "ami-id" {
-    default = "ami-0ff91eb5c6fe7cc86"  
+    description = "ami id for ec2"  
 }
 variable "instance_type" {
-    default = "t2.micro"  
+    description = "instance_type for ec2"  
 }
