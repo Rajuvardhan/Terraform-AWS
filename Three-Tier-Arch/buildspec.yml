@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+
+  install:
+
+    commands:
+
+      - wget https://releases.hashicorp.com/terraform/1.15.2/terraform_1.15.2_linux_amd64.zip
+      - unzip terraform_1.15.2_linux_amd64.zip
+      - mv terraform /usr/local/bin/
+      - terraform version
+
+  pre_build:
+
+    commands:
+
+      - terraform init
+
+  build:
+
+    commands:
+
+      - terraform fmt -check
+      - terraform validate
+      - terraform plan -out=tfplan
+
+  post_build:
+
+    commands:
+
+      - terraform apply -auto-approve tfplan
