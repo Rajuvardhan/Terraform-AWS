@@ -35,7 +35,7 @@ resource "aws_subnet" "public" {
         }
         public-2 = {
             cidr_block = var.public_subnet1_cidr
-            availability_zone = var.availability_zone-1b
+            availability_zone = var.availability_zone_1b
             map_public_ip_on_launch = true
         }
     }
@@ -59,7 +59,7 @@ resource "aws_subnet" "private" {
         }
         private-2 = {
             cidr_block = var.private_subnet2_cidr
-            availability_zone = var.availability_zone-1b
+            availability_zone = var.availability_zone_1b
             map_public_ip_on_launch = false
         }
     }
@@ -259,7 +259,7 @@ resource "aws_security_group" "alb-sg" {
 
 # launch bastion host
 resource "aws_instance" "Bastion-host" {
-    ami = var.ami-id
+    ami = var.ami_id
     instance_type = var.instance_type
     subnet_id = aws_subnet.public["public-1"].id
     vpc_security_group_ids = [aws_security_group.bastion-sg.id]
@@ -273,7 +273,7 @@ resource "aws_instance" "Bastion-host" {
 
 # launch application server
 resource "aws_instance" "app-server" {
-    ami = var.ami-id
+    ami = var.ami_id
     instance_type = var.instance_type
     subnet_id = aws_subnet.private["private-1"].id
     vpc_security_group_ids = [ aws_security_group.app-sg.id]
