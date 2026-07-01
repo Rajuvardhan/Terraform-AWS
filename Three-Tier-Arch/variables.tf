@@ -1,44 +1,49 @@
 variable "aws_region" {
-    description = "region for aws resources"  
+  description = "AWS Region"
+  type        = string
 }
 
 variable "vpc_cidr" {
-    description = "cidr range for vpc"
-     
+  description = "CIDR range for VPC"
+  type        = string
 }
 
 variable "public_subnet_cidr" {
-    description = "public subnet 1"   
-  
+  description = "Public Subnet 1 CIDR"
+  type        = string
 }
 
 variable "public_subnet1_cidr" {
-    description = "public subnet 2"   
-  
+  description = "Public Subnet 2 CIDR"
+  type        = string
 }
 
 variable "private_subnet1_cidr" {
-    description = "private subnet 1" 
-  
+  description = "Private Subnet 1 CIDR"
+  type        = string
 }
 
 variable "private_subnet2_cidr" {
-    description = "private subnet 2"
-  
+  description = "Private Subnet 2 CIDR"
+  type        = string
 }
 
 variable "availability_zone" {
-    description = "avaialbility zone 1"
-
-}
-  
-variable "availability_zone-1b" {
-    description = "avaialbility zone 2"
+  description = "Availability Zone 1"
+  type        = string
 }
 
-variable "ami-id" {
-    description = "ami id for ec2"  
+variable "availability_zone_1b" {
+  description = "Availability Zone 2"
+  type        = string
 }
+
+variable "ami_id" {
+  description = "AMI ID"
+  type        = string
+}
+
 variable "instance_type" {
-    description = "instance_type for ec2"  
+  description = "EC2 Instance Type"
+  type        = string
 }
